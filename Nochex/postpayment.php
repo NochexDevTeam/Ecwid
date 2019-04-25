@@ -145,7 +145,7 @@
 		$Order   = $xml->createElement("order"); // Node Title
 		$Order->appendChild($id); // Retrieves the order_id
 		$Order->appendChild($status); // Retrieves the order_status
-		$Order->appendChild($response); // Retrieves the order_response
+		/*$Order->appendChild($response); // Retrieves the order_response*/
 			
 		$fnode->insertBefore($Order,$ori); //Inserts the new node
 			
