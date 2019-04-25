@@ -2,7 +2,7 @@
 <?php require_once 'ecwid-config.php' ?>
 <?php
 		
-		$to = $merchantId;
+		$to = $payment_alert;
 			
 		// Get the POST information from Nochex server
 		$postvars = http_build_query($_POST);	
@@ -16,11 +16,10 @@
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars); // Set POST fields
-		curl_setopt($ch, CURLOPT_HTTPHEADER, "Host: www.nochex.com");
-		curl_setopt($ch, CURLOPT_POSTFIELDSIZE, 0); 
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Host: www.nochex.com"));
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 60); // set connection time out variable - 60 seconds	
-		//curl_setopt ($ch, CURLOPT_SSLVERSION, 6); // set openSSL version variable to CURL_SSLVERSION_TLSv1.2
+		curl_setopt ($ch, CURLOPT_SSLVERSION, 6); // set openSSL version variable to CURL_SSLVERSION_TLSv1.2
 		$output= curl_exec($ch); // Post back
 		curl_close($ch);
 			
