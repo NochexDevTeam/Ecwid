@@ -146,7 +146,7 @@ $testTransac = '';
 	<input type='hidden' name='callback_url' value="<?php echo $return_link_url . "?order_id=$payment_reference"; ?>"/>
 	<input type='hidden' name='test_transaction' value="<?php echo $testTransac; ?>" />
 	
-	<img src="https://www.nochex.com/logobase-secure-images/logobase-banners/clear-amex-mp.png" alt='card logos' height='80px;' /><br/>
+	<img src="https://www.nochex.com/logobase-secure-images/logobase-banners/clear.png" alt='card logos' height='80px;' /><br/>
 	<style>
 	.paybutton{
 	padding: 5px;
